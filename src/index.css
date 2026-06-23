@@ -345,3 +345,77 @@ button.outline:hover {
   color: #cbd5e1;
   border: 1px solid rgba(148, 163, 184, 0.2);
 }
+
+/* --- Added Responsiveness Rules --- */
+
+/* Tab shrink prevention for scrollbars */
+.tab-btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  /* Position the interactive canvas above the instructions on tablets/mobiles so the user sees real-time reactions instantly */
+  .canvas-container {
+    order: -1; 
+    min-height: 400px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .header-title {
+    justify-content: center;
+  }
+
+  .tabs-container {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbars for clean UI */
+    -ms-overflow-style: none;
+    padding: 0.35rem 0.5rem;
+  }
+  
+  .tabs-container::-webkit-scrollbar {
+    display: none; /* Hide Chrome/Safari scrollbars */
+  }
+
+  .canvas-container {
+    min-height: 320px;
+    padding: 1rem;
+  }
+  
+  .glass-panel {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title h1 {
+    font-size: 1.5rem;
+  }
+  
+  .canvas-container {
+    min-height: 280px;
+    padding: 0.5rem;
+  }
+
+  .glass-panel {
+    padding: 1rem;
+  }
+  
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 0.9rem;
+  }
+}
